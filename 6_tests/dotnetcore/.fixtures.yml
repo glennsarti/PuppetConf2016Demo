@@ -1,0 +1,20 @@
+fixtures:
+
+  # This is how you normally install forge modules
+  # forge_modules:
+  #   stdlib: "puppetlabs-stdlib"
+  #   powershell: "puppetlabs/powershell"
+
+  # For this demo, use a local git server
+  repositories:  
+    powershell:
+      repo: "http://puppetconfdemoserver.localdomain:9000/puppetlabs-powershell.git"
+      ref: "2.0.2"
+    stdlib:
+      repo: "http://puppetconfdemoserver.localdomain:9000/puppetlabs-stdlib.git"
+      ref: "4.12.0"
+
+  symlinks:
+    "dotnetcore": "#{source_dir}"
+
+# Reference - https://github.com/puppetlabs/puppetlabs_spec_helper#fixtures-examples
