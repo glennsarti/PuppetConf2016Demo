@@ -1,6 +1,6 @@
 $ErrorActionPreference = 'Stop'
 $srcDir = $PSScriptRoot
-$modulesDir = "$srcDir\..\modules"
+$modulesDir = "C:\modules"
 $dncModulesDir = "$modulesDir\dotnetcore"
 
 Push-Location $dncModulesDir

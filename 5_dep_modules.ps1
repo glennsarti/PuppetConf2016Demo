@@ -1,6 +1,6 @@
 $ErrorActionPreference = 'Stop'
 $srcDir = $PSScriptRoot
-$modulesDir = "$srcDir\..\modules"
+$modulesDir = "C:\modules"
 
 & git clone "http://puppetconfdemoserver.localdomain:9000/puppetlabs-powershell.git" "$modulesDir\powershell"
 Push-Location "$modulesDir\powershell"

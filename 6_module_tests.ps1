@@ -1,13 +1,13 @@
 $ErrorActionPreference = 'Stop'
 $srcDir = $PSScriptRoot
-$modulesDir = "$srcDir\..\modules"
+$modulesDir = "C:\modules"
 $dncModulesDir = "$modulesDir\dotnetcore"
 
 Copy-Item -Path "$srcDir\6_tests\dotnetcore" -Destination $modulesDir -Recurse -Confirm:$false -Force | Out-Null
 
 Push-Location $dncModulesDir
 
-& git add --a
-& git commit -m "Add tests"
+#& git add --a
+#& git commit -m "Add tests"
 
 Pop-Location

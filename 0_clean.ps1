@@ -1,6 +1,6 @@
 $ErrorActionPreference = 'Stop'
 $srcDir = $PSScriptRoot
-$modulesDir = "$srcDir\..\modules"
+$modulesDir = "C:\modules"
 
 if (Test-Path -Path $modulesDir) {
   # Stupid symlinks

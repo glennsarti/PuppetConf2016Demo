@@ -14,5 +14,10 @@ if ($content -notlike '*github*') {
 
 & gem sources --add http://puppetconfdemoserver.localdomain:8808
 
+Write-Host "Setting GEM_SOURCE"
 & reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v GEM_SOURCE /t REG_SZ /d "http://puppetconfdemoserver.localdomain:8808" /f
+
+Write-Host "Setting PATH"
+& reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v PATH /t REG_SZ /d "$($PSScriptRoot);$($ENV:Path)" /f
+
 Write-Host "Requires Reboot"

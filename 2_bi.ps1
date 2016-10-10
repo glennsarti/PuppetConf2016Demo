@@ -1,6 +1,6 @@
 $ErrorActionPreference = 'Stop'
 $srcDir = $PSScriptRoot
-$modulesDir = "$srcDir\..\modules\dotnetcore"
+$modulesDir = "C:\modules\dotnetcore"
 
 Push-Location $modulesDir
 bundle install --path .bundle\gems --without system_tests
