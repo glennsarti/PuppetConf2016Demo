@@ -1,0 +1,116 @@
+*** Start CREATE
+
+Explain the module we will make
+- Install dotnetcore runtime
+- Custom fact with info about the currently installed runtime
+
+cd /d c:\Modules
+
+puppet module generate glennsarti-dotnetcore
+
+cd dotnetcore
+
+git init
+git add --a
+git commit -m "Initial commit"
+
+1_create.ps1 (Show updated gitignore)
+git add --a
+git commit -m "Updated gitignore"
+
+bundle install --path .bundle\gems --without system_tests
+
+bundle exe rake -T
+
+4_module_content.ps1
+- metadata.json
+- manifests folder (should look familiar)
+- templates folder (should look familiar)
+- facts.d folder (should look familiar - External facts)
+
+- lib folder (custom ruby code)
+  - puppet (custom code for puppet)
+    - type and provider (ruby code to implement custom types and providers for resources)
+    - functions (ruby code for custom puppet functions)
+  - facter (custom ruby facts)
+  - puppet_x (custom code for your module)
+
+
+show tests folder (may be called examples)
+
+bundle exec puppet apply .\tests\demo.pp (expect error)
+
+bundle exec puppet apply .\tests\demo.pp --modulepath .. (expect error)
+
+5_dep_modules.ps1
+
+bundle exec puppet apply .\tests\demo.pp --modulepath .. (no error)
+dir c:\windows\system32\dotnetcore (Installed! yay!)
+
+bundle exec puppet facts --modulepath .. (missing version fact)
+
+commit changes
+
+Have an error time to debug!
+
+
+*** Start DEBUG
+
+Uncomment gems in GemFile
+bundle install --path .bundle\gems --without system_tests
+
+Add reqire pry to dotnetcore_version
+
+bundle exec puppet facts --modulepath .. 
+
+Show information on first launch (source code, line)
+
+show-stack
+whereami
+
+next
+PuppetX::Dotnetcore::Info.get_version_information (shows usage info not the actual version)
+
+step (like in Visual Studio)
+next
+next
+ls dotnet_exe_path  (bit like Get-Member) 
+
+try with --version instead
+exit!
+
+Modify code for --version
+bundle exec puppet facts --modulepath .. 
+
+continue
+
+commit changes
+
+All fixed up...now for some tests
+
+
+*** Start TESTS
+
+6_module_tests.ps1
+- .fixtures.yml
+- spec
+  - defines (test your defines)
+  - classes, functions (test your classes and functions)
+  - unit, integration, acceptance
+Note how test folder structure looks like lib.  Make easier to find the tests
+
+bundle exec rake spec
+Downloads test fixtures (shows error)
+
+Rerun a specific test
+
+Update install.pp and uncomment validate_bool
+
+Rerun test and success
+
+Mention pry
+
+ALl tests pass, time to publish!
+
+*** Start publish
+

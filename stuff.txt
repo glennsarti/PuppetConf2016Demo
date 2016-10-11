@@ -1,0 +1,1 @@
+http://unethicalblogger.com/2014/03/01/testing-custom-facts-with-rspec.html

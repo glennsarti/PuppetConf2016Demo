@@ -4,6 +4,7 @@ Facter.add('dotnetcore_version') do
   confine :osfamily => :windows
   setcode do
     begin
+      # require 'pry'; binding.pry      
       version = nil
       info = PuppetX::Dotnetcore::Info.get_version_information
 

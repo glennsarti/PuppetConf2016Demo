@@ -16,7 +16,7 @@ define dotnetcore::install(
     $destdir = $destination
   }
 
-  exec { "dot_net_core_install_$destdir":
+  exec { "dot_net_core_install_${destdir}":
     command   => template('dotnetcore/install-dnc.ps1'),
     unless    => template('dotnetcore/check-dnc.ps1'),
     provider  => powershell,

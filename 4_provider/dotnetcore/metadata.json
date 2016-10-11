@@ -2,7 +2,7 @@
   "name": "glennsarti-dotnetcore",
   "version": "0.1.0",
   "author": "glennsarti",
-  "summary": null,
+  "summary": "Example module for Puppet Conf 2016",
   "license": "Apache-2.0",
   "source": "",
   "project_page": null,

@@ -22,7 +22,7 @@ module PuppetX
       def self.get_version_information(dotnet_exe_path = nil)
         if Puppet::Util::Platform.windows?
           dotnet_exe_path = self.default_exe if dotnet_exe_path.nil?
-          Puppet::Util::Execution.execute("#{dotnet_exe_path} --version", :failonfail => false).gsub("\r","")
+          Puppet::Util::Execution.execute("#{dotnet_exe_path} -version", :failonfail => false).gsub("\r","")
         end
       end
 
