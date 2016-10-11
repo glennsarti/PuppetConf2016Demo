@@ -1,8 +1,13 @@
+BEFORE EVERYTHING
+
+UPDATE DEMO SOURCE
+RUN CLEAN
+
 *** Start CREATE
 
 Explain the module we will make
 - Install dotnetcore runtime
-- Custom fact with info about the currently installed runtime
+- Custom fact with info about the currently installed system level runtime 
 
 cd /d c:\Modules
 
@@ -112,5 +117,17 @@ Mention pry
 
 ALl tests pass, time to publish!
 
-*** Start publish
 
+*** Start PUBLISH
+
+bundle exec rake build
+
+show pkg folder and tar.gz
+
+Don't really need the specs folder for a module to work in Puppet so let's remove them
+Uncomment line in .pmtignore
+
+bundle exec rake clean build
+
+mention the puppetblacksmith gem can be used to automate a lot of tasks e.g. versions,
+publish to forge.

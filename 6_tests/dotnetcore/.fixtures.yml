@@ -9,7 +9,7 @@ fixtures:
   repositories:  
     powershell:
       repo: "http://puppetconfdemoserver.localdomain:9000/puppetlabs-powershell.git"
-      ref: "2.0.2"
+      ref: "1.0.6"
     stdlib:
       repo: "http://puppetconfdemoserver.localdomain:9000/puppetlabs-stdlib.git"
       ref: "4.12.0"
