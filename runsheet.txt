@@ -89,6 +89,8 @@ bundle exec puppet facts --modulepath ..
 
 continue
 
+remove require pry
+
 commit changes
 
 All fixed up...now for some tests
