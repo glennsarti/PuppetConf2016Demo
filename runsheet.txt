@@ -23,7 +23,7 @@ git commit -m "Initial commit"
 git add --a
 git commit -m "Updated gitignore"
 
-bundle install --path .bundle\gems --without system_tests
+bundle install --path .bundle\gems
 
 bundle exe rake -T
 
@@ -45,8 +45,6 @@ show tests folder (may be called examples)
 
 bundle exec puppet apply .\tests\demo.pp (expect error)
 
-bundle exec puppet apply .\tests\demo.pp --modulepath .. (expect error)
-
 5_dep_modules.ps1
 
 bundle exec puppet apply .\tests\demo.pp --modulepath .. (no error)
@@ -62,7 +60,7 @@ Have an error time to debug!
 *** Start DEBUG
 
 Uncomment gems in GemFile
-bundle install --path .bundle\gems --without system_tests
+bundle install --path .bundle\gems
 
 Add reqire pry to dotnetcore_version
 

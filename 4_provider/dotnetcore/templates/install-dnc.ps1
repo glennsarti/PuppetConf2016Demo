@@ -2,6 +2,7 @@ $ErrorActionPreference = 'Stop'
 $VerbosePreference = 'Continue'
 
 Write-Verbose "Install DNC"
+$success = $false
 
 # Also convert linux path seperator to Windows
 $DestinationDir = '<%= @destdir %>'.Replace('/','\')
@@ -40,7 +41,6 @@ Function Get-LocalURL() {
   Write-Output $url
 }
 
-$success = $false
 try {
   # Init
   $DownloadURL = ''
@@ -95,4 +95,7 @@ try {
   Write-Verbose $_
 }
 
-if ($success) { Exit 0 } else { Exit 1}
+if (-not $success) {
+  Exit 1
+}
+Exit 0
