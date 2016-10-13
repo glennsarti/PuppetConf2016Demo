@@ -14,9 +14,11 @@ if ($content -notlike '*puppetconfdemoserver*') {
 
 uru pupconf
 
-& gem sources --add http://puppetconfdemoserver.localdomain:8808
+# & gem sources --add http://puppetconfdemoserver.localdomain:8808
 
 Write-Host "Setting GEM_SOURCE"
 $ENV:GEM_SOURCE = 'http://puppetconfdemoserver.localdomain:8808'
 Write-Host "Setting PATH"
 $ENV:PATH = "$($PSScriptRoot);$($ENV:Path)"
+
+cd C:\modules
