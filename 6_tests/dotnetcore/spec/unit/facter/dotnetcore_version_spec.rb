@@ -26,7 +26,7 @@ DNCVER
       expect(subject.value).to eq("1.0.0-preview2-003121")
     end
 
-    it "should return version if calling an runtime version of dotnetcore" do
+    it "should return version if calling a runtime version of dotnetcore" do
       dotnet_version = <<-DNCVER
 
 Microsoft .NET Core Shared Framework Host

@@ -3,11 +3,14 @@ BEFORE EVERYTHING
 UPDATE DEMO SOURCE
 RUN CLEAN
 
-*** Start CREATE
+--------------------
+Start CREATE
+--------------------
 
 Explain the module we will make
 - Install dotnetcore runtime
 - Custom fact with info about the currently installed system level runtime 
+- Explain that I'll be using some quick scripts to speed up demo dir c:\Demo\Source
 
 cd /d c:\Modules
 
@@ -32,14 +35,12 @@ bundle exe rake -T
 - manifests folder (should look familiar)
 - templates folder (should look familiar)
 - facts.d folder (should look familiar - External facts)
-
 - lib folder (custom ruby code)
   - puppet (custom code for puppet)
     - type and provider (ruby code to implement custom types and providers for resources)
     - functions (ruby code for custom puppet functions)
   - facter (custom ruby facts)
   - puppet_x (custom code for your module)
-
 
 show tests folder (may be called examples)
 
@@ -56,8 +57,9 @@ commit changes
 
 Have an error time to debug!
 
-
-*** Start DEBUG
+--------------------
+Start DEBUG
+--------------------
 
 Uncomment gems in GemFile
 bundle install --path .bundle\gems
@@ -83,7 +85,7 @@ try with --version instead
 exit!
 
 Modify code for --version
-bundle exec puppet facts --modulepath .. 
+bundle exec puppet facts --modulepath .. | sls 'dotnet'
 
 continue
 
@@ -93,8 +95,9 @@ commit changes
 
 All fixed up...now for some tests
 
-
-*** Start TESTS
+--------------------
+Start TESTS
+--------------------
 
 6_module_tests.ps1
 - .fixtures.yml
@@ -113,12 +116,15 @@ Update install.pp and uncomment validate_bool
 
 Rerun test and success
 
+bundle exec rspec spec/unit -f d
+
 Mention pry
 
-ALl tests pass, time to publish!
+All tests pass, time to publish!
 
-
-*** Start PUBLISH
+--------------------
+Start PUBLISH
+--------------------
 
 bundle exec rake build
 
@@ -130,4 +136,4 @@ Uncomment line in .pmtignore
 bundle exec rake clean build
 
 mention the puppetblacksmith gem can be used to automate a lot of tasks e.g. versions,
-publish to forge.
+publish to forge.  Go to github page for usage info

@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'facter'
 require 'puppet_x/dotnetcore/dotnetcore_info'
 
-describe 'dotnetcore_path_spec fact' do
+describe 'dotnetcore_path fact' do
   subject(:fact) { Facter.fact(:dotnetcore_path) }
 
   before :each do
