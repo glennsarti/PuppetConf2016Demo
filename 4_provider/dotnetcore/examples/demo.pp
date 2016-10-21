@@ -5,7 +5,7 @@ node default {
     architecture => 'x64',
     sdk          => true,
 
-    source => 'http://puppetconfdemoserver.localdomain/dotnetcore',
+    source       => 'http://puppetconfdemoserver.localdomain/dotnetcore',
     logoutput    => true,
   }
 
